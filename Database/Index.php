@@ -1,19 +1,21 @@
 <!doctype HTML>
 <html>
 	<head>
-		<title>Oefening met PDO objecten</title>
+		<title>ProjectLab</title>
 		<link rel="stylesheet" type="text/css" href="mystyle.css">
 	</head>
 	<body>
 		<h1>Database entries</h1>
-		<?php
-			include "Database.php";
-
-			$database = new Database();
-			$database->openDatabaseConnection();
-			$database->retrieveSong(1);
-			$database->closeDatabaseConnection();
-			echo "last line";
-		?>
+		<form method="post" action="getSong.php">
+    <p>
+        <label>Name:
+            <input type="text" name="songID" maxlength="30">
+        </label>
+    </p>
+    <p>
+        <input type="submit" value="Submit">
+        <input type="reset" value="Clear">
+    </p>   
+</form>
 	</body>
 </html>

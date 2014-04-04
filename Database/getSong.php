@@ -1,8 +1,15 @@
 <?php
 include "Database.php";
 
-$database = new Database();
-$database->openDatabaseConnection();
-$database->retrieveSong(1);
-$database->closeDatabaseConnection();
+if (!empty($_POST['songID'])) 
+{
+        $database = new Database();
+		$database->openDatabaseConnection();
+		$database->retrieveSong($_POST['songID']);
+		$database->closeDatabaseConnection();
+}
+else 
+{
+    echo "No values submitted";
+}
  ?>
