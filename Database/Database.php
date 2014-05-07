@@ -42,13 +42,18 @@ class Database
     }
     function retrieveSong($songID)
     {
-        $result = mysqli_query($this->con,"SELECT * FROM ProjectLab WHERE ID = '$songID'");
+        $result = mysqli_query($this->con, "SELECT * FROM ProjectLab WHERE ID = '$songID'");
 
         while($row = mysqli_fetch_array($result))
         {
-            echo $row['ID'] . " " . $row['Song'];
+            echo $row['Title'] . "," . $row['Song'];
             echo "<br>";
         }
+    }
+    function writeSong($songID, $songName, $songData)
+    {
+        $sqlStatement = mysqli_query($this->con, "INSERT INTO `dejager_be`.`ProjectLab` (`ID`, `Title`, `Song`) VALUES ('$songID', '$songName', '$songData'");
+        $sqlStatement
     }
 }
 ?>
