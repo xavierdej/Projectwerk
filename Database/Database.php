@@ -46,14 +46,13 @@ class Database
 
         while($row = mysqli_fetch_array($result))
         {
-            echo $row['Title'] . "," . $row['Song'];
+            echo $row['Title'] . ":" . $row['Song'];
             echo "<br>";
         }
     }
     function writeSong($songID, $songName, $songData)
     {
         $sqlStatement = mysqli_query($this->con, "INSERT INTO `dejager_be`.`ProjectLab` (`ID`, `Title`, `Song`) VALUES ('$songID', '$songName', '$songData'");
-        $sqlStatement
     }
 }
 ?>
